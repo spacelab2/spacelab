@@ -1,30 +1,22 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var gsap = require('gsap');
 
-var demo = document.getElementById("demo");
-
-TweenLite.fromTo(demo, 2, { x: '-=200px' }, { x: 150, ease: Power4.easeInOut, onStart: start, onUpdate: update, onComplete: complete });
-
-TweenLite.to(demo, 0.4, { top: '100%', y: '-100%', ease: Bounce.easeOut, delay: 2 });
-TweenLite.to(demo, 0.7, { x: '-=200px', y: '-100%', ease: Back.easeInOut, delay: 3 });
-TweenLite.to(demo, 0.8, { x: '-=200px', y: '-100%', ease: Back.easeInOut, delay: 4.2 });
-TweenLite.to(demo, 2.5, { top: '50%', y: '-50%', ease: Power0.easeNone, delay: 5 });
-TweenLite.to(demo, 2.5, { x: '+=400px', ease: Elastic.easeInOut, delay: 7.7 });
-TweenLite.to(demo, 2.5, { x: '-=400px', rotation: -720, ease: SlowMo.ease.config(0.1, 0.7, false), delay: 10.4 });
+var circleOne = document.getElementsByClassName('circle-one');
+TweenMax.from(circleOne, 5, {
+    opacity: 0,
+    scale: 0,
+    ease:Bounce.easeOut
+});
 
 
-// 7. Callback functions
-function start() {
-    console.log('start');
-}
-
-function update() {
-    console.log('animating');
-}
-
-function complete() {
-    console.log('end of the animation la');
-}
+var lines = document.getElementsByClassName('line');
+TweenMax.staggerFrom(lines, 5, {
+    opacity: 0,
+    y: 200,
+    rotation: 360,
+    scale: 2,
+    delay: 5
+}, 0.2);
 
 
 },{"gsap":2}],2:[function(require,module,exports){
