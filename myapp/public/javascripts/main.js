@@ -23,7 +23,7 @@ function update() {
 }
 
 function complete() {
-    console.log('end');
+    console.log('end of the animation la');
 }
 
 
